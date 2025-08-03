@@ -5,11 +5,11 @@ import random
 pygame.init()
 
 # create the window
-width = 500
-height = 500
+width = 700
+height = 700
 screen_size = (width, height)
 screen = pygame.display.set_mode(screen_size)
-pygame.display.set_caption('Car Game')
+pygame.display.set_caption('Escape the Loop: The 2025 Data Engineering Challenge')
 
 # colors
 gray = (100, 100, 100)
