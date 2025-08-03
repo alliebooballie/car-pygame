@@ -103,7 +103,7 @@ while running:
     for event in pygame.event.get():
         if event.type == QUIT:
             running = False
-            loggedEvent = GameEvent(player_id=player_id, event_type="QUIT", value=None, position=[player.rect.x, player.rect.y])
+            loggedEvent = GameEvent(player_id=player_id, event_type="QUIT", item=None, position=[player.rect.x, player.rect.y])
             logEvent(loggedEvent)
             
         # move the player's car using the left/right arrow keys
@@ -111,18 +111,18 @@ while running:
             
             if event.key == K_LEFT and player.rect.center[0] > left_lane:
                 player.rect.x -= 100
-                loggedEvent = GameEvent(player_id=player_id, event_type="MOVE_LEFT", value=None, position=[player.rect.x, player.rect.y])
+                loggedEvent = GameEvent(player_id=player_id, event_type="MOVE_LEFT", item=None, position=[player.rect.x, player.rect.y])
                 logEvent(loggedEvent)
             elif event.key == K_RIGHT and player.rect.center[0] < right_lane:
                 player.rect.x += 100
-                loggedEvent = GameEvent(player_id=player_id, event_type="MOVE_RIGHT", value=None, position=[player.rect.x, player.rect.y])
+                loggedEvent = GameEvent(player_id=player_id, event_type="MOVE_RIGHT", item=None, position=[player.rect.x, player.rect.y])
                 logEvent(loggedEvent)
 
             # check if there's a side swipe collision after changing lanes
             for vehicle in vehicle_group:
                 if pygame.sprite.collide_rect(player, vehicle):
                     gameover = True
-                    loggedEvent = GameEvent(player_id=player_id, event_type="CRASH", value="VEHICLE", position=[player.rect.x, player.rect.y])
+                    loggedEvent = GameEvent(player_id=player_id, event_type="CRASH", item="VEHICLE", position=[player.rect.x, player.rect.y])
                     logEvent(loggedEvent)
                     
                     # place the player's car next to other vehicle
