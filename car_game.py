@@ -43,7 +43,7 @@ lane_marker_move_y = 0
 player_id = "FunTeam"
 
 # player's starting coordinates
-player_x = 300
+player_x = 250
 player_y = 500
 
 # frame settings
